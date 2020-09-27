@@ -1,0 +1,229 @@
+.fred .fred--modal-bg .fredcropper--modal {
+    background-color:#383838;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header {
+    background-color: #313131;
+    position:relative;
+    box-shadow:0 1px 3px 1px rgba(0,0,0,.5);
+    overflow:visible;
+    padding:10px 15px;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header button {
+    margin-top:2px;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header .fredcropper--edit-text-btn,
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header .fredcropper--info-btn {
+    margin:0 20px 0 0;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header .fredcropper--edit-text-btn img,
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header .fredcropper--info-btn img {
+    height:24px;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-footer {
+    background-color: #313131;
+    box-shadow:0 -1px 3px 1px rgba(0,0,0,.5);
+    overflow:auto;
+    padding:10px 15px;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-footer button:hover {
+    background-color:#549c89;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header h1 {
+    color:#ccc;
+    font-size:18px;
+    font-weight:bold;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header button {
+    cursor:pointer;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-header button polygon {
+    fill:#ccc;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--browse .fred--browse-small {
+    background-color:#549c89;
+}
+.fred .fred--modal-bg .fredcropper--modal .fred--modal-body {
+    background-color:#424242;
+    padding-bottom:0;
+}
+.fredcropper--main-wrapper .cropper-view-box, .fredcropper--main-wrapper .cropper-face.cropper-move {
+    height:100% !important;
+    width:100% !important;
+}
+.fredcropper--main-wrapper {
+    display:flex;
+    flex-direction: column;
+    border-radius:2px;
+}
+.fredcropper--top-row {
+    display: flex;
+    flex-direction: column;
+}
+.fred .fred--modal-bg .fredcropper--top-row label {
+    color:#ccc;
+}
+.fred .fredcropper--top-row .fred--input-group input:not(.numInput) {
+    width: calc(100% - 36px) !important;
+}
+.fred .fred--modal-bg .fredcropper--top-row .fred--browse {
+}
+.fred .fred--modal-bg .fredcropper--top-row .fred--browse input[type="text"]{
+    background-color: #1e1e1e;
+    color:#ccc;
+    border-bottom:0;
+    box-shadow:0 -2px 0 0 inset rgba(0,0,0,1);
+    margin:0;
+}
+.fredcropper--content-row {
+    height:420px !important;
+    width:100%;
+    display: flex;
+    justify-content: start;
+    background-color: #656565;
+    border:5px solid #232323;
+    overflow:hidden;
+
+}
+.fredcropper--content-row .fredcropper--control-panel {
+    width:54px;
+    flex-shrink: 0;
+    padding:10px;
+    background-color: #1e1e1e !important;
+    display: flex;
+    flex-direction: column;
+}
+.fredcropper--content-row .fredcropper--control-panel img {
+    width:34px;
+    height:34px;
+    margin-bottom:10px;
+    padding:5px;
+    border-radius:3px;
+    background-color: #313131;
+    border:1px solid #3a3a3a;
+    box-shadow:0 0 2px 1px rgba(0,0,0,.8);
+    cursor:pointer;
+}
+.fredcropper--content-row .fredcropper--control-panel img:hover {
+    background-color: #424242;
+}
+
+.fredcropper--content-row .fredcropper--control-panel .fredcropper--reset-btn {
+    margin-bottom:0;
+    margin-top:auto;
+}
+
+.fredcropper--content-row .fredcropper--crop-panel {
+    margin:0;
+    height:420px;
+    flex-shrink: 1;
+    flex-grow:1;
+}
+.fredcropper--content-row .fredcropper--crop-panel img {
+    max-height:100%;
+    max-width:100%;
+
+}
+.fredcropper--content-row .fredcropper--thumb-panel {
+    padding:15px;
+    width:200px;
+    flex-shrink:0;
+    overflow-y:auto;
+}
+.fredcropper--content-row .fredcropper--thumb-panel-title {
+    color:#ccc !important;
+    background-color:#444;
+    padding:0 8px;
+    margin-bottom:15px;
+    font-size:11px;
+    text-transform:uppercase;
+    text-align: center;
+    box-shadow:0 0 1px 1px rgba(0,0,0,.15);
+}
+.fredcropper--content-row .fredcropper--thumb-panel .fredcropper--thumb {
+    margin-bottom:15px !important;
+    width:100%;
+    height:100px;
+    box-shadow:0 0 2px 3px rgba(0,0,0,.15);
+    background-image:linear-gradient( rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48) ),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+.fredcropper--content-row .fredcropper--thumb-panel .fredcropper--thumb-inner {
+    width:100%;
+    height:100%;
+    cursor:pointer;
+    transition: all .03s ease-out;
+    position:relative;
+}
+.fredcropper--content-row .fredcropper--thumb-panel .fredcropper--thumb-title {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:20px;
+    text-align: center;
+    background-color:rgba(0,0,0,0.5);
+    color:#ccc;
+    z-index:2;
+    font-size:10px;
+    line-height:1;
+    padding:5px 0;
+}
+.fredcropper--content-row .fredcropper--thumb-panel .fredcropper--thumb-inner.active, .fredcropper--content-row .fredcropper--thumb-panel .fredcropper--thumb-inner:hover {
+    border:2px solid #307bc6;
+}
+.fredcropper--content-row .fredcropper--thumb-panel .fredcropper--thumb-inner img {
+    max-width:100%;
+    max-height:100%;
+    position:relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background:linear-gradient( rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48) );
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel {
+    height:66px;
+    width:100%;
+    flex-shrink:0;
+    display:flex;
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel .fredcropper--detail-panel-left {
+    flex-grow: 1;
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel .fredcropper--thumb-buttons {
+    display: flex;
+    justify-content: center;
+    padding:15px;
+    width:300px;
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel .fredcropper--thumb-buttons .fredcropper--save-crop-btn {
+    margin-left:5px;
+    background-color:#28a745;
+    border:1px solid #30c752;
+    box-shadow:0 0 2px 1px rgba(0,0,0,.15);
+    display:flex;
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel .fredcropper--thumb-buttons .fredcropper--save-crop-btn:hover {
+    background-color:#218838;
+    border:1px solid #218838;
+    box-shadow:none;
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel .fredcropper--thumb-buttons .fredcropper--delete-crop-btn {
+    margin-right:5px;
+    background-color:#dc3545;
+    border:1px solid #ff3d50;
+    box-shadow:0 0 2px 1px rgba(0,0,0,.15);
+    display:flex;
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel .fredcropper--thumb-buttons .fredcropper--delete-crop-btn:hover {
+    background-color:#c82333;
+    border:1px solid #c82333;
+    box-shadow:none;
+}
+.fredcropper--main-wrapper .fredcropper--detail-panel .fredcropper--detail-panel-right {
+    flex-grow: 1;
+}
+.fredcropper--modal-preview-inner {
+    overflow:auto !important;
+}
+.fred--modal-header .fredcropper--link-btn {
+    margin:-2px 15px 0 0;
+}

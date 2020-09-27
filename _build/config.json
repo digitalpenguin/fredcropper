@@ -1,0 +1,50 @@
+{
+    "name": "FredCropper",
+    "lowCaseName": "fredcropper",
+    "description": "Gives the option to crop images uploaded via Fred",
+    "author": "Murray Wood",
+    "version": "1.0.0-alpha1",
+    "package":{
+
+        "elements": {
+        
+            
+            "snippets": [{
+                "name": "FredCropper"
+            }],
+
+            "plugins": [{
+                "name": "FredCropper",
+                "file": "fredcropper.plugin.php",
+                "events": ["FredBeforeRender"]
+            }],
+            
+            "chunks": [
+            
+            {
+                "name": "FredCropperTpl"
+            }
+            
+            ]
+            
+        
+        },
+
+        "systemSettings": [{
+            "key": "crops_url",
+            "type": "textfield",
+            "area": "default",
+            "value": "{assets_url}fcrops/"
+        },{
+            "key": "crops_path",
+            "type": "textfield",
+            "area": "default",
+            "value": "{assets_path}fcrops/"
+        }]
+    }
+    
+    ,"database": {
+        "tables": ["FredCropperCrop"]
+    }
+    
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="fredcropper" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" phpdoc-package="fredcropper" version="1.1">
+
+    <object class="FredCropperCrop" table="fredcropper_crops" extends="xPDOSimpleObject">
+        <field key="crop_name" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false"/>
+        <field key="element_id" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="filename" dbtype="varchar" precision="191" phptype="string" null="false" default="" />
+        <field key="create_time" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false"/>
+    </object>
+
+</model>
