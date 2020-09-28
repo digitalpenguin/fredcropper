@@ -47,6 +47,8 @@ PLANNED EXTRA FEATURES
 
 - Display warnings on the crop preview if the cropped area is smaller than the specified crop size.
 
+- Enable output of crops as either jpg, png or webp depending on the original file format.
+
 
 KNOWN ISSUES
 ============
@@ -56,3 +58,5 @@ KNOWN ISSUES
 
 - (Only kind of an issue) If a user duplicates a FredCropper element, the source image is also duplicated but the crops
   are not. This means that after duplicating, the user would then need to make new crops for the new element.
+
+- Currently only saving crops as PNG.

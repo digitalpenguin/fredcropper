@@ -7,25 +7,16 @@
     "package":{
 
         "elements": {
-        
-            
-            "snippets": [{
-                "name": "FredCropper"
-            }],
 
             "plugins": [{
                 "name": "FredCropper",
                 "file": "fredcropper.plugin.php",
-                "events": ["FredBeforeRender"]
+                "events": ["FredBeforeRender","FredOnFredResourceSave"]
             }],
             
-            "chunks": [
-            
-            {
+            "chunks": [{
                 "name": "FredCropperTpl"
-            }
-            
-            ]
+            }]
             
         
         },

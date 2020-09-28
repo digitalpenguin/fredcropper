@@ -82,22 +82,29 @@ class FredCropper {
             $elementIds[] = $dirArr[0];
         }
         foreach($elements as $element) {
-            // If an element dir exists but it's not saved to the resource data. Delete it and the files within.
-
+            // If an element dir exists but it's not saved to the resource data, delete it and the files within.
             $key = array_search($element['elId'],$elementIds);
-
             if($key !== '' && $key !== null) {
                 // Match was found so remove from element ids that are up for deletion.
                 unset($elementIds[$key]);
             }
         }
-        //$this->modx->log(MODX_LOG_LEVEL_ERROR,print_r($elementIds,true));
 
         // Now that all element ids we want to keep have been removed from the array, delete the dirs with keys still in the array.
         foreach($elementIds as $elementId) {
             $dirname = $rootPath . $resourceId . '/' . $elementId;
             array_map('unlink', glob($dirname.'/*.*'));
             rmdir($dirname);
+        }
+
+        // Also remove db records for deleted files.
+        if(!empty($elementIds)) {
+            $result = $this->modx->removeCollection('FredCropperCrop', [
+                'element_id:IN' => $elementIds
+            ]);
+            if (!$result) {
+                $this->modx->log(MODX_LOG_LEVEL_ERROR, 'Unable to remove orphaned FredCropper elements for resource: ' . $resourceId);
+            }
         }
 
         return true;
