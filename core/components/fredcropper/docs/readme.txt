@@ -29,6 +29,8 @@ FEATURES
 - Old crop clean-up functionality. Uses the MODX event "FredOnFredResourceSave" to check if the user deleted any
   FredCropper elements from a resource and if so removes associated crop image files from the server.
 
+- Swap out the source image for crops of different images within the same element.
+
 
 PLANNED EXTRA FEATURES
 ======================
@@ -37,9 +39,6 @@ PLANNED EXTRA FEATURES
 - Display live image data (width, height, position etc.) while cropping.
 
 - Allow developer to set the quality of crop output. Currently is hard-coded at 100%.
-
-- Swap out the source image for a single or many crops. This will allow you to have different images for different screen sizes if desired.
-  Currently all crops within the same Fred element come from the same source image.
 
 - Have a modal with fields for the user to add content for the alt and title tags.
 
@@ -60,3 +59,5 @@ KNOWN ISSUES
   are not. This means that after duplicating, the user would then need to make new crops for the new element.
 
 - Currently only saving crops as PNG.
+
+- Previews not showing full size of images if the original was smaller.

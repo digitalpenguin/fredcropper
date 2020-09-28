@@ -287,10 +287,8 @@ const FredCropperInit = function(fred, Editor, pluginTools) {
                     thumbImg = div('test');
                 }
 
-
                 thumbInner.appendChild(thumbImg);
 
-                //console.log(this.elementCrops);
                 thumbTitle.innerHTML = crop.label;
                 thumbInner.appendChild(thumbTitle);
                 thumb.appendChild(thumbInner);
@@ -420,11 +418,12 @@ const FredCropperInit = function(fred, Editor, pluginTools) {
                 }/*,'image/webp'*/); // TODO: Set image type depending on type of file originally used.
             }.bind(this));
 
+            /*
             const deleteCropBtn = button('Delete Crop');
             deleteCropBtn.classList.add('fredcropper--delete-crop-btn');
             deleteCropBtn.classList.add('fred--btn-small');
-
             thumbButtons.appendChild(deleteCropBtn);
+            */
             thumbButtons.appendChild(saveCropBtn);
 
             detailPanel.appendChild(leftDetailPanel);

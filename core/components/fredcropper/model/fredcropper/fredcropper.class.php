@@ -66,6 +66,14 @@ class FredCropper {
         return $option;
     }
 
+    /**
+     * This function is called when a Fred enabled resource is saved via plugin.
+     * Compares the element ids saved in the resource properties field with the crop directories for that resource.
+     * Removes directories, files and db records of elements that have been deleted by the user.
+     *
+     * @param $resource
+     * @return bool
+     */
     public function cleanupOrphanedCrops($resource) {
         $rootPath = $this->modx->getOption('fredcropper.crops_path');
         $resourceId = $resource->get('id');
