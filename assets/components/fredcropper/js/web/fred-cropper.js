@@ -18,7 +18,7 @@ const FredCropperInit = function(fred, Editor, pluginTools) {
             const title = fredConfig.lngExists(this.constructor.title) ? fredConfig.lng(this.constructor.title) : this.constructor.title;
             let wrapper,modal;
 
-            if(pluginTools.fredConfig.getPluginsData('fredcropper', 'activated') === 'true') {
+            if(pluginTools.fredConfig.getPluginsData('fredcropper'+this.el.fredEl.elId, 'activated') === 'true') {
                 this.el.dataset.crop = 'true';
             }
 
@@ -273,7 +273,7 @@ const FredCropperInit = function(fred, Editor, pluginTools) {
             this.activeCrop = null;
             this.crops.forEach(function(crop) {
                 let width = crop.size.substr(0, crop.size.lastIndexOf("x"));
-                console.log(width);
+
                 let thumb = div(['fredcropper--thumb']);
                 let thumbInner = i === 0 ? div(['fredcropper--thumb-inner','active']) : div('fredcropper--thumb-inner');
                 let thumbTitle = div('fredcropper--thumb-title');
@@ -685,7 +685,7 @@ class SrcSetManager {
 
         this.saveSrcSet();
         this.fredCropper.el.dataset.crop = 'true';
-        this.fredCropper.pluginTools.fredConfig.setPluginsData('fredcropper', 'activated', 'true');
+        this.fredCropper.pluginTools.fredConfig.setPluginsData('fredcropper'+this.fredCropper.el.fredEl.elId, 'activated', 'true');
     }
 
     /**
