@@ -7,6 +7,8 @@ ALPHA
 FredCropper is currently in an alpha state and is not recommended for a production environment.
 It is currently the minimum viable product.
 
+Please report any bugs you find.
+
 
 FEATURES
 ========
@@ -65,13 +67,13 @@ USAGE
 =====
 After installing FredCropper via the MODX package manager, create a Fred element which contains an "img" tag, and give
 it some extra attributes. We need src, srcset, data-fred-name and data-fred-attrs. See the following example:
-
+```
 <img src="/assets/images/my-default-image.jpg"
     srcset="/assets/images/my-default-image.jpg"
     data-fred-attrs="srcset,sizes,data-crop,alt,title"
     data-fred-name="something-unique"
 >
-
+```
 - "src" and "srcset" should have the same value.
 
 - FredCropper will manipulate the srcset attribute automatically but it needs an initial value so that when you drop the
@@ -88,7 +90,7 @@ After setting up the attributes above, next switch to the options tab. We need t
 as well as the value you want for the "sizes" attribute.
 
 See the following example:
-
+```
 {
   "FredCropper": [
     {
@@ -115,7 +117,7 @@ See the following example:
     }
   ]
 }
-
+```
 As you can see above, everything is under the "FredCropper" name. Just like your other options might be under "settings".
 https://modxcms.github.io/fred/themer/options/settings/
 
