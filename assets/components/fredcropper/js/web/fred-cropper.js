@@ -37,7 +37,17 @@ const FredCropperInit = function(fred, Editor, pluginTools) {
                             i++;
                         }.bind(this));
                     }
+
+                    if(option.sizes) {
+                        // Set user values for "sizes" attribute
+                        //console.log(option.sizes);
+                        this.setStateAttribute('sizes',option.sizes);
+                    }
                 }.bind(this));
+
+
+
+
 
                 this.srcSetManager = new SrcSetManager(this);
 
@@ -408,7 +418,7 @@ const FredCropperInit = function(fred, Editor, pluginTools) {
                             url     : result.crop
                         }
                         this.srcSetManager.updateSrcSet(newSrc);
-                        this.setStateAttribute('sizes','1920px');
+
                         //this.setStateAttribute('alt','This is alt text');
 
                     })

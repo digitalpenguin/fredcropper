@@ -61,3 +61,73 @@ KNOWN ISSUES
 - Currently only saving crops as PNG.
 
 - Previews not showing full size of images if the original was smaller.
+
+- Does not currently support resolution switching. i.e. using 2x instead of pixel width.
+
+
+USAGE
+=====
+After installing FredCropper via the MODX package manager, create a Fred element which contains an "img" tag, and give
+it some extra attributes. We need src, srcset, data-fred-name and data-fred-attrs. See the following example:
+
+<img src="/assets/images/my-default-image.jpg"
+    srcset="/assets/images/my-default-image.jpg"
+    data-fred-attrs="srcset,sizes,data-crop,alt,title"
+    data-fred-name="something-unique"
+>
+
+- "src" and "srcset" should have the same value.
+
+- FredCropper will manipulate the srcset attribute automatically but it needs an initial value so that when you drop the
+element in a dropzone, it will show an image you can click on to open the cropping window.
+
+- data-fred-attrs is the attribute that controls what Fred will save. Make sure you include srcset, sizes, data-crop, alt and title as values.
+(alt and title aren't being used yet but they will be in the next update)
+
+- data-fred-name is the same as any other editable Fred element. Give it a unique value.
+
+OPTIONS
+
+After setting up the attributes above, next switch to the options tab. We need to enter the crop sizes we want for this element,
+as well as the value you want for the "sizes" attribute.
+
+See the following example:
+
+{
+  "FredCropper": [
+    {
+      "crops": [
+        {
+          "name": "desktop",
+          "label": "Desktop",
+          "size": "1920x400"
+        },
+        {
+          "name": "mobile",
+          "label": "Mobile",
+          "size": "768x600"
+        },
+        {
+          "name": "tiny",
+          "label": "Tiny",
+          "size": "300x150"
+        }
+      ]
+    },
+    {
+      "sizes": "(min-width: 1200px) 1920w, 768w"
+    }
+  ]
+}
+
+As you can see above, everything is under the "FredCropper" name. Just like your other options might be under "settings".
+https://modxcms.github.io/fred/themer/options/settings/
+
+The two main options here are "crops" and "sizes". Each crop needs a "name, a "label" and a "size" value.
+
+The "sizes" value can be anything you like to control how the images appear on different screen widths.
+e.g. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+
+
+Once you've finished, save, and you can start to use it.
+Drop the element into a dropzone and click on the image to open the cropper.
