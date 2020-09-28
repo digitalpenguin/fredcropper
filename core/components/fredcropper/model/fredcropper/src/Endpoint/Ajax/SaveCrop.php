@@ -146,7 +146,9 @@ class SaveCrop extends Endpoint {
 
     protected function deleteOldCrop() {
         if (file_exists($this->elementDir.$this->oldFilename)) {
-            unlink($this->elementDir.$this->oldFilename);
+            if(is_file($this->elementDir.$this->oldFilename)) {
+                unlink($this->elementDir . $this->oldFilename);
+            }
         }
 
     }

@@ -66,5 +66,42 @@ class FredCropper {
         return $option;
     }
 
+    public function cleanupOrphanedCrops($resource) {
+        $rootPath = $this->modx->getOption('fredcropper.crops_path');
+        $resourceId = $resource->get('id');
+        $elements = $resource->get('properties')['fred']['data']['content'];
+
+        if(!$rootPath || !$resourceId || empty($elements)) return false;
+
+        $dirs = glob($rootPath . $resourceId . '/*', GLOB_ONLYDIR);
+
+        $elementIds = [];
+        foreach($dirs as $dir) {
+            $dirArr = explode('/',$dir);
+            $dirArr = array_reverse($dirArr);
+            $elementIds[] = $dirArr[0];
+        }
+        foreach($elements as $element) {
+            // If an element dir exists but it's not saved to the resource data. Delete it and the files within.
+
+            $key = array_search($element['elId'],$elementIds);
+
+            if($key !== '' && $key !== null) {
+                // Match was found so remove from element ids that are up for deletion.
+                unset($elementIds[$key]);
+            }
+        }
+        //$this->modx->log(MODX_LOG_LEVEL_ERROR,print_r($elementIds,true));
+
+        // Now that all element ids we want to keep have been removed from the array, delete the dirs with keys still in the array.
+        foreach($elementIds as $elementId) {
+            $dirname = $rootPath . $resourceId . '/' . $elementId;
+            array_map('unlink', glob($dirname.'/*.*'));
+            rmdir($dirname);
+        }
+
+        return true;
+    }
+
 
 }
